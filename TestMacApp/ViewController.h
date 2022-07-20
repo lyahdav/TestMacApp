@@ -8,10 +8,7 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 
-@interface ViewController : NSViewController <NSTextFieldDelegate>
-
-@property (weak) IBOutlet WKWebView *webView;
-@property (weak) IBOutlet NSView *view1;
+@interface ViewController : NSViewController
 
 @end
 
