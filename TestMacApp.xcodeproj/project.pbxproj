@@ -12,6 +12,8 @@
 		FE0CD1542655A23500BA05D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE0CD1532655A23500BA05D1 /* Assets.xcassets */; };
 		FE0CD1572655A23500BA05D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0CD1552655A23500BA05D1 /* Main.storyboard */; };
 		FE0CD15A2655A23500BA05D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CD1592655A23500BA05D1 /* main.m */; };
+		FE0CD1642655A40100BA05D1 /* MyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CD1632655A40100BA05D1 /* MyTextView.m */; };
+		FEFC892C27EE4FB700655F45 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEFC892B27EE4FB700655F45 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,9 @@
 		FE0CD1582655A23500BA05D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE0CD1592655A23500BA05D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FE0CD15B2655A23500BA05D1 /* TestMacApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestMacApp.entitlements; sourceTree = "<group>"; };
+		FE0CD1622655A40100BA05D1 /* MyTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTextView.h; sourceTree = "<group>"; };
+		FE0CD1632655A40100BA05D1 /* MyTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTextView.m; sourceTree = "<group>"; };
+		FEFC892B27EE4FB700655F45 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEFC892C27EE4FB700655F45 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +49,7 @@
 			children = (
 				FE0CD14C2655A23400BA05D1 /* TestMacApp */,
 				FE0CD14B2655A23400BA05D1 /* Products */,
+				FEFC892A27EE4FB700655F45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +73,18 @@
 				FE0CD1582655A23500BA05D1 /* Info.plist */,
 				FE0CD1592655A23500BA05D1 /* main.m */,
 				FE0CD15B2655A23500BA05D1 /* TestMacApp.entitlements */,
+				FE0CD1622655A40100BA05D1 /* MyTextView.h */,
+				FE0CD1632655A40100BA05D1 /* MyTextView.m */,
 			);
 			path = TestMacApp;
+			sourceTree = "<group>";
+		};
+		FEFC892A27EE4FB700655F45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEFC892B27EE4FB700655F45 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE0CD1522655A23400BA05D1 /* ViewController.m in Sources */,
+				FE0CD1642655A40100BA05D1 /* MyTextView.m in Sources */,
 				FE0CD15A2655A23500BA05D1 /* main.m in Sources */,
 				FE0CD14F2655A23400BA05D1 /* AppDelegate.m in Sources */,
 			);
@@ -274,6 +292,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = TestMacApp/TestMacApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -292,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = TestMacApp/TestMacApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
