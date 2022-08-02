@@ -7,35 +7,37 @@
 
 #import "ViewController.h"
 
-#include <mutex>
-#include <thread>
+@implementation ViewController {
+  NSPopover* _popover;
+}
 
-std::mutex g_mutex;
-
-void bg_thread_execute()
-{
-  uint64_t tid;
-  pthread_threadid_np(NULL, &tid);
+- (IBAction)button1Tapped:(id)sender {
+  _popover = [NSPopover new];
+  NSViewController *vc = [NSViewController new];
+  vc.view = [NSView new];
+  vc.view.frame = CGRectMake(0, 0, 100, 100);
+  _popover.contentViewController = vc;
+  _popover.contentSize = CGSizeMake(100, 100);
+  _popover.delegate = self;
   
-  NSLog(@"bg_thread_execute start");
-  g_mutex.lock();
-  NSLog(@"bg_thread_execute end");
+  [_popover showRelativeToRect:CGRectMake(0, 0, 10, 10) ofView:self.view preferredEdge:NSRectEdgeMinX];
 }
 
-@implementation ViewController
-
-- (IBAction)deadlockMainThreadButtonTapped:(id)sender {
-  g_mutex.lock();
-  std::thread t1(bg_thread_execute);
-  t1.join();
+- (void)popoverDidClose:(NSNotification*)notification {
+  NSLog(@"popoverDidClose");
 }
 
-- (IBAction)buttonTapped:(id)sender {
-  std::thread t1(bg_thread_execute);
-  std::thread t2(bg_thread_execute);
-  t1.detach();
-  t2.detach();
-  NSLog(@"buttonTapped end");
+- (IBAction)button2Tapped:(id)sender {
+  NSPopover* _popover2;
+  _popover2 = [NSPopover new];
+  NSViewController *vc = [NSViewController new];
+  vc.view = [NSView new];
+  vc.view.frame = CGRectMake(0, 0, 100, 100);
+  _popover2.contentViewController = vc;
+  _popover2.contentSize = CGSizeMake(100, 100);
+  _popover2.delegate = self;
+  
+  [_popover2 showRelativeToRect:CGRectMake(0, 0, 10, 10) ofView:self.view preferredEdge:NSRectEdgeMaxX];
 }
 
 @end
