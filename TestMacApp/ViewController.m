@@ -11,9 +11,12 @@
 
 - (void)viewDidLoad {
   NSTextView *tv = [[NSTextView alloc] initWithFrame:CGRectMake(50, 50, 300, 100)];
-  tv.maxSize = CGSizeMake(300, 100);
   tv.selectable = YES;
-  tv.editable = YES;
+  tv.editable = NO;
+
+  NSDictionary *attributes = @{NSLinkAttributeName: @"http://www.google.com"};
+  [tv.textStorage appendAttributedString:[[NSAttributedString alloc] initWithString:@"http://www.google.com" attributes:attributes]];
+
   [self.view addSubview:tv];
 }
 
